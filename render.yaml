@@ -1,7 +1,12 @@
 services:
   - type: worker
-    name: avby-bot
+    name: avby-bot-2
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      pip install --upgrade pip
+      pip install aiogram==2.25.1
+      pip install aiohttp==3.8.6
+      pip install beautifulsoup4==4.12.2
+      pip install lxml==4.9.3
     startCommand: python main.py
     plan: free
